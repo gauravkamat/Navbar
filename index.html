@@ -3,82 +3,70 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
     <title></title>
+    <style >
+      body{
+
+      }
+      .sidenav
+      {
+        height:100%;
+        width:0;
+        position:fixed;
+        z-index:1;
+        top:0;
+        left:0;
+        background:#111;
+        overflow-x:hidden;
+        transition:0.5s;
+        padding-top:60px;
+      }
+      .sidenav a
+      {
+        padding:8px 16px;
+        text-decoration:none;
+        font-size:24px;
+        color:white;
+        display:block;
+        transition:0.3s;
+      }
+     .closebtn
+      {
+        position:absolute;
+        top:0px;
+        right:10px;
+
+      }
+      #main
+      {
+        transition:margin-left .3s;
+      }
+    </style>
   </head>
   <body>
-    <div class="container container-sm border border-dark p-3 my-5" style="width:400px">
-
-    <div class="container bg-secondary  p-5 border border-dark">
-
+    <div class="sidenav" id="mysidenav">
+      <a href="javascript:void(0)" class="closebtn" style="font-size:40px" onclick="closenav()">&times;</a>
+      <a href="#">Link</a>
+      <a href="#">Link</a>
+      <a href="#">Link</a>
+      <a href="#">Link</a>
     </div>
-    <div class="container-sm">
-      <div class="row">
-        <div class="col btn btn-dark p-3 m-1 text-center  " onclick="press()">
-        9
-        </div>
-        <div class="col btn btn-dark p-3 m-1 text-center " onclick="press()">
-          8
-        </div>
-        <div class="col btn btn-dark p-3 m-1 text-center " onclick="press()">
-          7
-        </div>
-      </div>
-      <div class="row">
-        <div class="col btn btn-dark p-3 m-1 text-center " onclick="press()">
-          6
-        </div>
-        <div class="col btn btn-dark p-3 m-1 text-center " onclick="press()">
-          5
-        </div>
-        <div class="col btn btn-dark p-3 m-1 text-center" onclick="press()">
-          4
-        </div>
-      </div>
-      <div class="row">
-        <div class="col btn  btn-dark p-3 m-1 text-center" onclick="press()">
-          3
-        </div>
-        <div class="col btn btn-dark p-3 m-1 text-center" onclick="press()">
-          2
-        </div>
-        <div class="col btn btn-dark p-3 m-1 text-center" onclick="press()">
-          1
-        </div>
-      </div>
-      <div class="row">
-        <div class="col btn btn-dark p-3 m-1 text-center" onclick="press()">
-          =
-        </div>
-        <div class="col btn btn-dark p-3 m-1 text-center " onclick="press()">
-          0
-        </div>
-        <div class="col btn btn-dark p-3 m-1 text-center" onclick="press()">
-          #
-        </div>
-      </div>
-      <div class="row">
-        <div class="col btn btn-dark p-3 m-1 text-center" onclick="press()">
-          +
-        </div>
-        <div class="col btn  btn-dark p-3 m-1 text-center" onclick="press()">
-          -
-        </div>
-        <div class="col btn btn-dark p-3 m-1 text-center" onclick="press()">
-          *
-        </div>
-        <div class="col btn btn-dark p-3 m-1 text-center" onclick="press()">
-          /
-        </div>
+    <div id="main">
 
-      </div>
-    </div>
-  </div>
-<script>
-  function press(){alert("Pending")}
-</script>
+    <p>Click on the element below to open the side navigation menu.</p>
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+</div>
+    <script>
+      function openNav() {
+document.getElementById("mysidenav").style.width = "200px";
+document.getElementById("main").style.marginLeft="200px"
+}
+
+function closenav() {
+document.getElementById("mysidenav").style.width = "0";
+document.getElementById("main").style.marginLeft="0"
+}
+    </script>
   </body>
 </html>
