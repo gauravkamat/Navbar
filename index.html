@@ -1,92 +1,124 @@
+<!--
+  Changing the Opacity of Background on Expansion of navabr
+-->
 <!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  font-family: "Lato", sans-serif;
-  transition: background-color .5s;
-}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+    body {
+      font-family: "Lato", sans-serif;
+      transition: background-color .5s;
+    }
 
-.sidenav {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-}
+    .sidenav {
+      height:100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+      text-align: center;
+    }
 
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
 
-.sidenav a:hover {
-  color: #f1f1f1;
-}
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
 
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
 
-#main {
-  transition: margin-left .5s;
-  padding: 16px;
-}
+    #main {
+      transition: margin-left .5s;
+      padding: 16px;
+    }
+/*
+    @media screen and (max-height: 450px) {
+      .sidenav {padding-top: 15px;}
+      .sidenav a {font-size: 18px;}
+    }*/
+    </style>
+  </head>
+  <body>
 
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-</style>
-</head>
-<body>
+      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+      <br> <br>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav1()">&#9776; open1</span>
+        <br> <br>
+          <span style="font-size:30px;cursor:pointer" onclick="openNav2()">&#9776; open2</span>
+          <br> <br>
+            <span style="font-size:30px;cursor:pointer" onclick="openNav3()">&#9776; open3</span>
 
-  <span style="font-size:30px;cursor:pointer" id="xy" onclick="openNav()">&#9776; open</span>
-<div id="mySidenav" class="sidenav">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
-</div>
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
+    </div>
 
-<div id="main">
-  <h2>Sidenav Push Example</h2>
-  <p>Click on the element below to open the side navigation menu, and push this content to the right. Notice that we add a black see-through background-color to body when the sidenav is opened.</p>
-</div>
+    <div id="main">
+      <h2>Sidenav Push Example</h2>
+      <p>Click on the element below to open the side navigation menu, and push this content to the right. Notice that we add a black see-through background-color to body when the sidenav is opened.</p>
+    </div>
 
-<script>
-function openNav() {
-  document.getElementById("mySidenav").style.width = "75%";
-  document.getElementById("main").style.marginLeft = "25%";
-  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
-  document.getElementById("xy").style.display="none";
-  document.body.style.fontSize="30px";
+    <script>
+      //Setting To 25% width
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+      document.body.style.background = "rgba(0,0,0,0.2)";
 
+    }
+    //Setting to 50% width
+    function openNav1() {
+      document.getElementById("mySidenav").style.width = "50%";
+      document.body.style.background = "rgba(0,0,0,0.2)";
+      document.getElementById("mySidenav").style.fontSize = "50px";
 
-}
+    }
+    //Setting Width to 75%;
 
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
-  document.body.style.backgroundColor ="white";
-  document.getElementById("xy").style.display="block";
-}
-</script>
+    function openNav2() {
+      document.getElementById("mySidenav").style.width = "75%";
+      document.body.style.background = "rgba(0,0,0,0.2)"; 
+      /*document.getElementById("mySidenav").style.fontSize = "50px";*/
+    }
 
-</body>
+    //Setting Width to 100%........
+    function openNav3() {
+      document.getElementById("mySidenav").style.width = "100%";
+      /*document.getElementByTagName("a").style.fontSize = "28px";*/
+    }
+
+    //Setting Width to 100%........
+  //Common Close button to all open bar
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+      document.body.style.background = "white";
+      /*document.getElementById("mySidenav").style.fontSize = "24px";*/
+    }
+    </script>
+
+  </body>
 </html>
