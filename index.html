@@ -57,16 +57,24 @@
     <p>Click on the element below to open the side navigation menu.</p>
 <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
 </div>
-    <script>
-      function openNav() {
-document.getElementById("mysidenav").style.width = "75%";
-document.getElementById("main").style.marginLeft="75%"
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "75%";
+  document.getElementById("main").style.marginLeft = "75%";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+  document.getElementById("xy").style.display="none";
+  document.body.style.fontSize="30px";
+
+
 }
 
-function closenav() {
-document.getElementById("mysidenav").style.width = "0";
-document.getElementById("main").style.marginLeft="0"
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor ="white";
+  document.getElementById("xy").style.display="block";
 }
-    </script>
+</script>
   </body>
 </html>
