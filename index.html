@@ -1,124 +1,115 @@
-<!--
-  Changing the Opacity of Background on Expansion of navabr
--->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-    <title></title>
-    <style>
-    body {
-      font-family: "Lato", sans-serif;
-      transition: background-color .5s;
-    }
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!--link rel="stylesheet" href="index.css"-->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <title>Sample Navbar</title>
+    <style media="screen">
+      body
+      {
+        margin:0;
+      }
+      .icon-nav
+      {
+        width:70px;
+        height:100vh;
+        background:#333 ;
+        margin:0;
+      }
+      .icon-nav a
+      {
+        display: block;
+        padding:20px 15px;
+        font-size: 30px;
+        color:white;
+        text-align: center;
+      }
+      .hidden-nav
+      {
+        position: absolute;
+        top:0;
+        left:70px;
+        width:0;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        transition: .5s;
+      }
+      .hidden-nav a
+      {
+        display:block;
+        padding: 18px 15px;
+        font-size: 25px;
+        color: black;
+        text-align: center;
+        text-decoration:none;
+        transition: .3s;
+      }
+      .hidden-nav a:nth-child(2)
+      {
+        margin-top:20px;
+      }
+      .hidden-nav .closebtn
+      {
+        position:absolute;
+        right:-8px;
+        top:-21px;
+        font-size:36px;
+        font-weight: bold;
+        margin-left:110px;
+      }
+      span
+      {
+        position: absolute;
+        top:0;
+        left:71px;
+        padding:5px;
+        transition: .5s;
+      }
+      #open
+      {
+        font-size: 30px;
+        transition: .5s;
+      }
 
-    .sidenav {
-      height:100%;
-      width: 0;
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      background-color: #111;
-      overflow-x: hidden;
-      transition: 0.5s;
-      padding-top: 60px;
-      text-align: center;
-    }
-
-    .sidenav a {
-      padding: 8px 8px 8px 32px;
-      text-decoration: none;
-      font-size: 25px;
-      color: #818181;
-      display: block;
-      transition: 0.3s;
-    }
-
-    .sidenav a:hover {
-      color: #f1f1f1;
-    }
-
-    .sidenav .closebtn {
-      position: absolute;
-      top: 0;
-      right: 25px;
-      font-size: 36px;
-      margin-left: 50px;
-    }
-
-    #main {
-      transition: margin-left .5s;
-      padding: 16px;
-    }
-    @media screen and (max-height: 450px) {
-      .sidenav {padding-top: 15px;}
-      .sidenav a {font-size: 18px;}
-    }
     </style>
   </head>
   <body>
-
-      <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
-      <br> <br>
-        <span style="font-size:30px;cursor:pointer" onclick="openNav1()">&#9776; open1</span>
-        <br> <br>
-          <span style="font-size:30px;cursor:pointer" onclick="openNav2()">&#9776; open2</span>
-          <br> <br>
-            <span style="font-size:30px;cursor:pointer" onclick="openNav3()">&#9776; open3</span>
-
-    <div id="mySidenav" class="sidenav">
+    <div class="icon-nav">
+      <a href="#"><i class="fas fa-house-user"></i></a>
+      <a href="#"><i class="fas fa-camera"></i></a>
+      <a href="#"><i class="fas fa-adjust"></i></a>
+      <a href="#"><i class="far fa-comment"></i></a>
+      <a href="#"><i class="fas fa-map-marker-alt"></i></a>
+    </div>
+    <div class="hidden-nav" id="hide">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Clients</a>
-      <a href="#">Contact</a>
-    </div>
+      <a href="#">HOME</a>
+      <a href="#">CAMERA</a>
+      <a href="#">DARK MODE</a>
+      <a href="#">COMMENT</a>
+      <a href="#">LOCATION</a>
 
-    <div id="main">
-      <h2>Sidenav Push Example</h2>
-      <p>Click on the element below to open the side navigation menu, and push this content to the right. Notice that we add a black see-through background-color to body when the sidenav is opened.</p>
     </div>
-
+    <span onclick="openNav()" id="open"><i class="fas fa-bars"></i></span>
     <script>
-      //Setting To 25% width
-    function openNav() {
-      document.getElementById("mySidenav").style.width = "250px";
-      document.getElementById("main").style.marginLeft = "250px";
-      document.body.style.background = "rgba(0,0,0,0.2)";
+      function openNav()
+      {
+        document.getElementById("hide").style.width="150px"
+        document.getElementById("open").style.marginLeft="150px"
+        document.getElementById("open").style.display="none"
 
-    }
-    //Setting to 50% width
-    function openNav1() {
-      document.getElementById("mySidenav").style.width = "50%";
-      document.body.style.background = "rgba(0,0,0,0.2)";
-      document.getElementById("mySidenav").style.fontSize = "50px";
+      }
+      function closeNav()
+      {
+        document.getElementById("hide").style.width="0";
+        document.getElementById("open").style.marginLeft="0";
+        document.getElementById("open").style.display="block"
 
-    }
-    //Setting Width to 75%;
+      }
 
-    function openNav2() {
-      document.getElementById("mySidenav").style.width = "75%";
-      document.body.style.background = "rgba(0,0,0,0.2)"; 
-      /*document.getElementById("mySidenav").style.fontSize = "50px";*/
-    }
-
-    //Setting Width to 100%........
-    function openNav3() {
-      document.getElementById("mySidenav").style.width = "100%";
-      /*document.getElementByTagName("a").style.fontSize = "28px";*/
-    }
-
-    //Setting Width to 100%........
-  //Common Close button to all open bar
-    function closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
-      document.getElementById("main").style.marginLeft= "0";
-      document.body.style.background = "white";
-      /*document.getElementById("mySidenav").style.fontSize = "24px";*/
-    }
     </script>
-
   </body>
 </html>
