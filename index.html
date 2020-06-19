@@ -2,27 +2,98 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-    <title>BUY button</title>
-    <style>
-    .btn
-      {
-        width:94%;
-        font-size:22px;
-        position:absolute;
-        bottom:15px;
-        margin-left:3%;
-        margin-right:3%;
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="design.css">
+    <title></title>
+    <style media="screen">
+    body{
+      margin:0;
+    }
+    .container
+    {
+      width:75%;
+      height:100vh;
+      background:#ccc;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .nav
+    {
+      font-size: 30px;
+      text-align: left;
+      font-weight: bold;
+      padding: 12px 16px;
+    }
+    .bottom
+    {
+      /*text-align:center;*/
+      position: absolute;
+      bottom: 0;
+      left:25%;
+    }
+    .bottom h4
+    {
+      line-height: 1.5em;
+    }
+    .nav:hover
+    {
+      border-left:5px solid #26292E;
+      background: rgba(0, 0, 0, 0.1);
+    }
+    i
+    {
+      margin-right: 30px;
+    }
+    .bar
+    {
+      position: absolute;
+      right: 26%;
+      margin-bottom: 10px;
+    }
 
-      }
     </style>
   </head>
   <body>
-  <button type="button" class="btn btn-primary ">BUY NOW</button>
+      <div class="container" id="navbar">
+        <div class="nav bar">
+          X
+
+        </div><br><br><br>
+          <div class="nav">
+            <i class="fas fa-home"></i>
+            HOME
+
+          </div>
+          <div class="nav">
+            <i class="fas fa-shopping-cart"></i>
+            CART
+
+          </div>
+          <div class="nav">
+            <i class="fas fa-route"></i>
+            ROUTE
+
+          </div>
+          <div class="nav">
+            <i class="fas fa-hamburger"></i>
+            MENU
+
+          </div>
+          <div class="nav">
+            <i class="fas fa-user-circle"></i>
+            PROFILE
+          </div>
+          <div class="bottom">
+            <h4>Sponsered By:<br>
+            <b>@WebDStuff</b> </h4>
+          </div>
+      </div>
+<script>
+
+</script>
+
 
   </body>
 </html>
